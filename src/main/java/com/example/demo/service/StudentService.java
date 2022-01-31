@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.exception.BadRequestException;
 import com.example.demo.exception.StudentNotFoundException;
 import com.example.demo.model.Student;
 import com.example.demo.repository.StudentRepository;
@@ -18,6 +19,11 @@ public class StudentService {
     }
 
     public void addStudent(Student student) {
+
+        Boolean existsEmail = studentRepository.selectExistsEmail(student.getEmail());
+        if (existsEmail){
+            throw new BadRequestException("Email " + student.getEmail() + " taken");
+        }
         studentRepository.save(student);
     }
 
