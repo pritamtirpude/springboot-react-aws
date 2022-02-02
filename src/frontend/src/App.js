@@ -1,7 +1,7 @@
 import "./app.css";
 import React, {useState, useEffect} from "react";
 import StudentDrawerForm from "./StudentDrawerForm";
-import {Layout, Menu, Breadcrumb, Table, Spin, Empty, Button, Tag, Badge, Avatar, Radio, Popconfirm} from 'antd';
+import {Layout, Menu, Breadcrumb, Table, Spin, Empty, Button, Tag, Badge, Avatar, Radio, Popconfirm, Image} from 'antd';
 import {
     DesktopOutlined,
     PieChartOutlined,
@@ -192,7 +192,9 @@ function App() {
                     {renderStudents()}
                 </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Coded by Pritam Tirpude</Footer>
+            <Footer style={{ textAlign: 'center' }}>
+                <Image width={75} src="https://user-images.githubusercontent.com/2618772/152133848-2f0f4404-3eb9-4b4d-b9be-2b341c89190c.png" />
+            </Footer>
         </Layout>
     </Layout>
 }
